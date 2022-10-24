@@ -1,5 +1,5 @@
 export const GoalModal = () => {
-  [
+  return [
     {
       goal: "1",
       title: "afskaf fattigdom",
