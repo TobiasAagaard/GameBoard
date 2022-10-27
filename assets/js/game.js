@@ -22,7 +22,7 @@ const cardGenerate = () => {
     face.classList.add("face");
     back.classList.add("back");
     // Giver card info med billeder
-    card.setAttribute("title", item.title);
+    card.setAttribute("name", item.name);
     face.src = item.imgSrc;
     back.src = "/assets/images/FN-Verdensmaal-ikon-logo.png";
 
@@ -49,8 +49,8 @@ const checkCards = (e) => {
 
   if (flippedCards.length === 2) {
     if (
-      flippedCards[0].getAttribute("title") ===
-      flippedCards[1].getAttribute("title")
+      flippedCards[0].getAttribute("name") ===
+      flippedCards[1].getAttribute("name")
     ) {
       console.log("match");
       flippedCards.forEach((card) => {

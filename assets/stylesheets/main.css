@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu+Mono:wght@400;700&family=Ubuntu:wght@300;400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,7 @@
 body {
   background-color: #0068b7;
   height: 100vh;
+  font-family: "Ubuntu", sans-serif;
 }
 
 .container {
@@ -14,6 +16,28 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 1rem;
+  color: #eee;
+}
+
+button {
+  margin-bottom: 9rem;
+  padding: 1rem 2rem;
+  background-color: #01e87c;
+  border: 0;
+  border-radius: 2px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 1s ease;
+}
+
+button:hover {
+  background-color: #2bf801;
 }
 
 #gameBorad {
