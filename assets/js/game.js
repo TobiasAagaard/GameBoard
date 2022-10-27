@@ -1,22 +1,17 @@
 import { GoalModal } from "./modal.js";
 const gameBorad = document.getElementById("gameBorad");
-const numCards = 10;
+const numCards = 8;
 let cardList = GoalModal();
 
+cardList.sort(() => Math.random() - 0.5);
 cardList = cardList.slice(0, numCards);
+cardList.sort(() => Math.random() - 0.5);
 cardList = cardList.concat(cardList);
-
-const randommize = () => {
-  const cardData = cardList;
-  cardData.sort(() => Math.random() - 0.5);
-  cardData.sort(() => Math.random() - 0.5);
-  return cardData;
-};
 
 // Genrate card
 
 const cardGenerate = () => {
-  const cardData = randommize();
+  const cardData = cardList;
   console.log(cardData);
   // Html
   cardData.forEach((item) => {
@@ -33,6 +28,10 @@ const cardGenerate = () => {
     gameBorad.appendChild(card);
     card.appendChild(face);
     card.appendChild(back);
+
+    card.addEventListener("click", (tog) => {
+      card.classList.toggle("toggleCard");
+    });
   });
 };
 

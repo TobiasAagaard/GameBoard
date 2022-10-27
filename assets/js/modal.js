@@ -53,37 +53,37 @@ export const GoalModal = () => {
     {
       goal: "11",
       title: "afskaf fattigdom",
-      imgSrc: "../images/Verdensmaal-ikon-11.png",
+      imgSrc: "/assets/images/Verdensmaal-ikon-11.png",
     },
     {
       goal: "12",
       title: "afskaf fattigdom",
-      imgSrc: "../images/Verdensmaal-ikon-12.png",
+      imgSrc: "/assets/images/Verdensmaal-ikon-12.png",
     },
     {
       goal: "13",
       title: "afskaf fattigdom",
-      imgSrc: "../images/Verdensmaal-ikon-13.png",
+      imgSrc: "/assets/images/Verdensmaal-ikon-13.png",
     },
     {
       goal: "14",
       title: "afskaf fattigdom",
-      imgSrc: "../images/Verdensmaal-ikon-14.png",
+      imgSrc: "/assets/images/Verdensmaal-ikon-14.png",
     },
     {
       goal: "15",
       title: "afskaf fattigdom",
-      imgSrc: "../images/Verdensmaal-ikon-15.png",
+      imgSrc: "/assets/images/Verdensmaal-ikon-15.png",
     },
     {
       goal: "16",
       title: "afskaf fattigdom",
-      imgSrc: "../images/Verdensmaal-ikon-16.png",
+      imgSrc: "/assets/images/Verdensmaal-ikon-16.png",
     },
     {
       goal: "17",
       title: "afskaf fattigdom",
-      imgSrc: "../images/Verdensmaal-ikon-17.png",
+      imgSrc: "/assets/images/Verdensmaal-ikon-17.png",
     },
   ];
 };
