@@ -53,11 +53,15 @@ const checkCards = (e) => {
       flippedCards[1].getAttribute("title")
     ) {
       console.log("match");
+      flippedCards.forEach((card) => {
+        card.classList.remove("flipped");
+        card.style.pointerEvents = "none";
+      });
     } else {
       console.log("wrong");
       flippedCards.forEach((card) => {
         card.classList.remove("flipped");
-        setTimeout(() => card.classList.remove("toggleCard"), 2000);
+        setTimeout(() => card.classList.remove("toggleCard"), 1000);
       });
     }
   }
