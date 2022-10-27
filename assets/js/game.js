@@ -11,28 +11,36 @@ cardList = cardList.concat(cardList);
 // Genrate card
 
 const cardGenerate = () => {
-  const cardData = cardList;
-  console.log(cardData);
+  console.log(cardList);
   // Html
-  cardData.forEach((item) => {
+  cardList.forEach((item) => {
     const card = document.createElement("div");
     const face = document.createElement("img");
-    const back = document.createElement("div");
+    const back = document.createElement("img");
 
     card.classList.add("card");
     face.classList.add("face");
     back.classList.add("back");
     // Giver card info med billeder
     face.src = item.imgSrc;
+    back.src = "/assets/images/FN-Verdensmaal-ikon-logo.png";
     // lægger cards sammen med gameBorad
     gameBorad.appendChild(card);
     card.appendChild(face);
     card.appendChild(back);
 
-    card.addEventListener("click", (tog) => {
+    card.addEventListener("click", (e) => {
       card.classList.toggle("toggleCard");
+      checkCards(e);
     });
   });
+};
+
+// checker om at cards macher
+
+const checkCards = (e) => {
+  const clickedCard = e.target;
+  console.log(clickedCard);
 };
 
 cardGenerate();
