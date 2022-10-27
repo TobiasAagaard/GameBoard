@@ -5,8 +5,8 @@ let cardList = GoalModal();
 
 cardList.sort(() => Math.random() - 0.5);
 cardList = cardList.slice(0, numCards);
-cardList.sort(() => Math.random() - 0.5);
 cardList = cardList.concat(cardList);
+cardList.sort(() => Math.random() - 0.5);
 
 // Genrate card
 

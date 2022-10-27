@@ -44,7 +44,7 @@ button:hover {
   display: grid;
   grid-template-columns: repeat(4, 8rem);
   grid-template-rows: repeat(4, 8rem);
-  gap: 2rem;
+  gap: 1rem;
   perspective: 800px;
 }
 #gameBorad .card {
