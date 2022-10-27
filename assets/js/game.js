@@ -22,8 +22,10 @@ const cardGenerate = () => {
     face.classList.add("face");
     back.classList.add("back");
     // Giver card info med billeder
+    card.setAttribute("title", item.title);
     face.src = item.imgSrc;
     back.src = "/assets/images/FN-Verdensmaal-ikon-logo.png";
+
     // lægger cards sammen med gameBorad
     gameBorad.appendChild(card);
     card.appendChild(face);
@@ -39,8 +41,22 @@ const cardGenerate = () => {
 // checker om at cards macher
 
 const checkCards = (e) => {
+  console.log(e);
   const clickedCard = e.target;
-  console.log(clickedCard);
+  clickedCard.classList.add("flipped");
+  const flippedCards = document.querySelectorAll(".flipped");
+  // if section
+
+  if (flippedCards.length === 2) {
+    if (
+      flippedCards[0].getAttribute("title") ===
+      flippedCards[1].getAttribute("title")
+    ) {
+      console.log("match");
+    } else {
+      console.log("wrong");
+    }
+  }
 };
 
 cardGenerate();
