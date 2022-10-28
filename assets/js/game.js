@@ -97,21 +97,9 @@ const startTimer = (duration, display) => {
 };
 
 window.onload = () => {
-  let oneMin = 60 * 1,
+  let timeDown = 120 * 1,
     display = document.getElementById("timeLeft");
-  startTimer(oneMin, display);
-};
-
-//reset
-const restart = () => {
-  let cardData = cardGenerate();
-  let faces = document.querySelectorAll(".face");
-  let cards = document.querySelectorAll(".card");
-  cardData.forEach((item, index) => {
-    cards[index].classList.remove("toggleCard");
-
-    cards[index].style.pointerEvents = "all";
-  });
+  startTimer(timeDown, display);
 };
 
 cardGenerate();
