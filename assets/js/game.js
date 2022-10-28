@@ -96,7 +96,7 @@ const startTimer = (duration, display) => {
   }, delay);
 };
 
-window.onclick = () => {
+window.onload = () => {
   let timeDown = 60 * 1,
     display = document.getElementById("timeLeft");
   startTimer(timeDown, display);
