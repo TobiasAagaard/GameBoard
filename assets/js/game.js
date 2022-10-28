@@ -5,16 +5,15 @@ let cardList = GoalModal();
 
 const numCards = 8;
 let delay = 1000;
-let pairsFound = 0;
-
-cardList.sort(() => Math.random() - 0.5);
-cardList = cardList.slice(0, numCards);
-cardList = cardList.concat(cardList);
-cardList.sort(() => Math.random() - 0.5);
 
 // Genrate card
 
 const cardGenerate = () => {
+  cardList.sort(() => Math.random() - 0.5);
+  cardList = cardList.slice(0, numCards);
+  cardList = cardList.concat(cardList);
+  cardList.sort(() => Math.random() - 0.5);
+
   console.log(cardList);
   // Html
   cardList.forEach((item) => {
@@ -70,6 +69,13 @@ const checkCards = (tog) => {
     }
   }
 };
+
+// reset
+const restart = () => {
+  let card;
+};
+
+// Timer
 
 const startTimer = (duration, display) => {
   let timer = duration,
