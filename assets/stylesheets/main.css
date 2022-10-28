@@ -45,27 +45,6 @@ svg {
   color: rgb(91, 223, 91);
 }
 
-h1 {
-  margin-bottom: 1rem;
-  color: #eee;
-}
-
-button {
-  margin-bottom: 2rem;
-  padding: 1rem 2rem;
-  background-color: #01e87c;
-  border: 0;
-  border-radius: 2px;
-  font-size: 1rem;
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: 1s ease;
-}
-
-button:hover {
-  background-color: #2bf801;
-}
-
 #gameBorad {
   display: grid;
   grid-template-columns: repeat(4, 8rem);
