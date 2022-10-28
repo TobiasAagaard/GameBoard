@@ -24,6 +24,7 @@ svg {
 }
 .container .wrapper {
   position: relative;
+  margin-bottom: 2rem;
 }
 .container .wrapper .clw {
   margin: auto;
