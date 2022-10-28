@@ -88,7 +88,7 @@ const startTimer = (duration, display) => {
 
     display.textContent = minutes + ":" + seconds;
 
-    if (--timer < 0) {
+    if (--timer < -1) {
       timer = duration;
       alert("tiden er gået");
       location.reload();
@@ -96,8 +96,8 @@ const startTimer = (duration, display) => {
   }, delay);
 };
 
-window.onload = () => {
-  let timeDown = 120 * 1,
+window.onclick = () => {
+  let timeDown = 60 * 1,
     display = document.getElementById("timeLeft");
   startTimer(timeDown, display);
 };
