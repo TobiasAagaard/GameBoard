@@ -91,6 +91,7 @@ const startTimer = (duration, display) => {
     if (--timer < 0) {
       timer = duration;
       alert("tiden er gået");
+      location.reload();
     }
   }, delay);
 };
