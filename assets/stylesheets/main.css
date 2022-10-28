@@ -18,6 +18,28 @@ body {
   align-items: center;
   flex-direction: column;
 }
+.container .wrapper {
+  position: relative;
+}
+.container .wrapper .clw {
+  margin: auto;
+  width: 15rem;
+}
+.container .wrapper .time1 {
+  position: absolute;
+  left: 4.3rem;
+  top: 6rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  color: #eee;
+}
+.container .wrapper .time2 {
+  position: absolute;
+  left: 6rem;
+  top: 8rem;
+  font-size: 1.3rem;
+  color: rgb(91, 223, 91);
+}
 
 h1 {
   margin-bottom: 1rem;
@@ -50,7 +72,7 @@ button:hover {
 #gameBorad .card {
   position: relative;
   transform-style: preserve-3d;
-  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: all 2s cubic-bezier(0.175, 0.885, 0.32, 1.775);
   box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 15px;
 }
 #gameBorad .face,
