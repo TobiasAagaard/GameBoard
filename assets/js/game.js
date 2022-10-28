@@ -1,7 +1,11 @@
 import { GoalModal } from "./modal.js";
+
 const gameBorad = document.getElementById("gameBorad");
-const numCards = 8;
 let cardList = GoalModal();
+
+const numCards = 8;
+let delay = 1000;
+let pairsFound = 0;
 
 cardList.sort(() => Math.random() - 0.5);
 cardList = cardList.slice(0, numCards);
@@ -31,18 +35,18 @@ const cardGenerate = () => {
     card.appendChild(face);
     card.appendChild(back);
 
-    card.addEventListener("click", (e) => {
+    card.addEventListener("click", (tog) => {
       card.classList.toggle("toggleCard");
-      checkCards(e);
+      checkCards(tog);
     });
   });
 };
 
 // checker om at cards macher
 
-const checkCards = (e) => {
-  console.log(e);
-  const clickedCard = e.target;
+const checkCards = (tog) => {
+  console.log(tog);
+  const clickedCard = tog.target;
   clickedCard.classList.add("flipped");
   const flippedCards = document.querySelectorAll(".flipped");
   // if section
@@ -61,10 +65,37 @@ const checkCards = (e) => {
       console.log("wrong");
       flippedCards.forEach((card) => {
         card.classList.remove("flipped");
-        setTimeout(() => card.classList.remove("toggleCard"), 1000);
+        setTimeout(() => card.classList.remove("toggleCard"), delay);
       });
     }
   }
+};
+
+const startTimer = (duration, display) => {
+  let timer = duration,
+    minutes,
+    seconds;
+
+  setInterval(() => {
+    minutes = parseInt(timer / 60, 10);
+    seconds = parseInt(timer % 60, 10);
+
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+
+    display.textContent = minutes + ":" + seconds;
+
+    if (--timer < 0) {
+      timer = duration;
+      alert("Tiden er gået");
+    }
+  }, delay);
+};
+
+window.onload = () => {
+  let oneMin = 60 * 1,
+    display = document.getElementById("timeLeft");
+  startTimer(oneMin, display);
 };
 
 cardGenerate();
