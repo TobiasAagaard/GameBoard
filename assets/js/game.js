@@ -71,9 +71,6 @@ const checkCards = (tog) => {
 };
 
 // reset
-const restart = () => {
-  let card;
-};
 
 // Timer
 
@@ -93,7 +90,8 @@ const startTimer = (duration, display) => {
 
     if (--timer < 0) {
       timer = duration;
-      alert("Tiden er gået");
+      alert("tidem er gået");
+      location.reload();
     }
   }, delay);
 };
@@ -102,6 +100,18 @@ window.onload = () => {
   let oneMin = 60 * 1,
     display = document.getElementById("timeLeft");
   startTimer(oneMin, display);
+};
+
+//reset
+const restart = () => {
+  let cardData = cardGenerate();
+  let faces = document.querySelectorAll(".face");
+  let cards = document.querySelectorAll(".card");
+  cardData.forEach((item, index) => {
+    cards[index].classList.remove("toggleCard");
+
+    cards[index].style.pointerEvents = "all";
+  });
 };
 
 cardGenerate();
