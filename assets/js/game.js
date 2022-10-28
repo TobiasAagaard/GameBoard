@@ -4,6 +4,7 @@ const gameBorad = document.getElementById("gameBorad");
 let cardList = GoalModal();
 
 const numCards = 8;
+const win = numCards * 2;
 let delay = 1000;
 
 // Genrate card
@@ -45,6 +46,7 @@ const cardGenerate = () => {
 
 const checkCards = (tog) => {
   console.log(tog);
+  const toggleCard = document.querySelectorAll(".toggleCard");
   const clickedCard = tog.target;
   clickedCard.classList.add("flipped");
   const flippedCards = document.querySelectorAll(".flipped");
@@ -68,6 +70,12 @@ const checkCards = (tog) => {
       });
     }
   }
+  setInterval(() => {
+    if (toggleCard.length === win) {
+      alert("You did it! You won!");
+      location.reload();
+    }
+  }, delay);
 };
 
 // reset
