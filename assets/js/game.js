@@ -83,31 +83,33 @@ const checkCards = (tog) => {
 // Timer
 
 const startTimer = (duration, display) => {
-  let timer = duration,
-    minutes,
-    seconds;
+  let timer = duration;
 
-  setInterval(() => {
-    minutes = parseInt(timer / 60, 10);
-    seconds = parseInt(timer % 60, 10);
+  const updateTimer = () => {
+    const minutes = String(Math.floor(timer / 60)).padStart(2, "0");
+    const seconds = String(timer % 60).padStart(2, "0");
 
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    seconds = seconds < 10 ? "0" + seconds : seconds;
+    display.textContent = `${minutes}:${seconds}`;
 
-    display.textContent = minutes + ":" + seconds;
-
-    if (--timer < -1) {
-      timer = duration;
-      alert("tiden er gået");
-      location.reload();
+    if (timer === 0) {
+      clearInterval(timerInterval);
+      alert("Time is up! You lost :(");
+      
     }
-  }, delay);
+
+    timer--;
+  };
+
+ 
+  updateTimer();
+  const timerInterval = setInterval(updateTimer, 1000);
 };
 
 window.onload = () => {
-  let timeDown = 90 * 1,
-    display = document.getElementById("timeLeft");
+  const timeDown = 60; 
+  const display = document.getElementById("timeLeft");
   startTimer(timeDown, display);
 };
+
 
 cardGenerate();
